@@ -20,8 +20,8 @@ Every unfollowers app that I found online had the required permission to send tw
 ## Run ##
 First, set the environment variables for Twitter credentials
 ````bash
-export TWITTER_CONSUMER_KEY="hSz5ZqhLuqCObrdXGI4lNpRWa"
-export TWITTER_CONSUMER_SECRET="2CZKZNJY3r8TEYENwakQB70RW8KWMDTFJ52bAN7ZZehqlkArsw"
+export TWITTER_CONSUMER_KEY="xxxxxxxxxxxxxxxxxxxxxxxx"
+export TWITTER_CONSUMER_SECRET="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 ````
 Twitter credentials are the ones required to be defined as environment variables, you can find more configurable variables in services/Config.js
 
