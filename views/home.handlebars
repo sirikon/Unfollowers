@@ -1,0 +1,22 @@
+<div am-LandingBoxCenter>
+	<h1>Unfollowers</h1>
+	<p>
+		Check who unfollowed you in a <b>fast and simple way</b>
+	</p>
+	<p>
+		<b>No Ads, no unexpected twits, no problem!</b>
+	</p>
+	<a id="loginwithtwitter" href="/auth/twitter/login"><button>Login with Twitter</button></a>
+	<script>
+		var loginwithtwitter = document.querySelector("#loginwithtwitter");
+		loginwithtwitter.addEventListener('click', function(){
+			loginwithtwitter.querySelector("button").innerHTML = '<i class="fa fa-spinner fa-spin fa-lg">';
+		});
+	</script>
+</div>
+
+<div am-LandingFooter>
+	<a href="http://sirikon.me" target="_blank">
+		<span class="sirikonme">Sirikon<b>.me</b></span>
+	</a>
+</div>

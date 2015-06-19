@@ -1,0 +1,215 @@
+@import url(http://fonts.googleapis.com/css?family=Kaushan+Script|Signika:400,300,600,700);
+html, body {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%; }
+
+body {
+  font-family: "Signika", sans-serif;
+  background-color: #ecf0f1;
+  margin: 0px;
+  padding: 0px; }
+  body.wait {
+    cursor: wait; }
+  body.landing {
+    background-color: #e74c3c;
+    display: flex;
+    display: -webkit-flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -o-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: center;
+    -ms-justify-content: center;
+    -moz-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -ms-align-items: center;
+    -moz-align-items: center;
+    -o-align-items: center;
+    align-items: center;
+    -webkit-align-content: center;
+    -ms-align-content: center;
+    -moz-align-content: center;
+    -o-align-content: center;
+    align-content: center;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    -moz-flex-direction: row;
+    -o-flex-direction: row;
+    flex-direction: row; }
+
+* {
+  outline: none !important; }
+
+[am-Header] {
+  background-color: #e74c3c;
+  margin: auto;
+  display: block;
+  border: 0px solid #c32f20;
+  border-width: 0px 0px 0.3em 0px; }
+  [am-Header] div {
+    display: block;
+    margin: auto;
+    width: 960px;
+    padding: 1px 0px;
+    color: white; }
+
+[am-Content] {
+  width: 960px;
+  margin: auto;
+  display: block; }
+
+article {
+  background-color: white;
+  padding: 1px 15px;
+  margin-top: 15px; }
+  article h1 {
+    margin: 15px 0px; }
+  article ul {
+    list-style: none;
+    padding: 0px;
+    margin: 15px 0px 15px -5px;
+    display: flex;
+    display: -webkit-flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -o-flex-wrap: wrap;
+    flex-wrap: wrap; }
+    article ul li {
+      display: inline-block;
+      min-width: 250px;
+      -webkit-flex-basis: 250px;
+      -ms-flex-basis: 250px;
+      -moz-flex-basis: 250px;
+      -o-flex-basis: 250px;
+      flex-basis: 250px;
+      -webkit-flex-grow: 1;
+      -ms-flex-grow: 1;
+      -moz-flex-grow: 1;
+      -o-flex-grow: 1;
+      flex-grow: 1;
+      margin: 0px 0px 5px 5px;
+      background-color: rgba(0, 0, 0, 0.01);
+      max-width: 307px; }
+      article ul li a {
+        text-decoration: none;
+        color: inherit; }
+      article ul li img {
+        float: left;
+        width: 48px;
+        height: 48px; }
+      article ul li span.name {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+        line-height: 28px;
+        font-size: 20px;
+        margin-left: 55px; }
+      article ul li span.screen_name {
+        text-decoration: none;
+        color: rgba(0, 0, 0, 0.5);
+        display: block;
+        line-height: 20px;
+        font-size: 13px;
+        margin-left: 55px; }
+  article div.date {
+    display: inline-block;
+    float: right;
+    background-color: #fcfcfc;
+    margin: -1px 0px 0px 0px;
+    padding: 0.5em 0.7em; }
+  article.profile img {
+    vertical-align: top;
+    width: 72px;
+    height: 72px;
+    margin: -1px 15px -1px -15px; }
+  article.profile h1 {
+    display: inline-block;
+    margin: 0px;
+    line-height: 70px; }
+  article.profile form {
+    float: right; }
+
+button {
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  margin: 15px 0px;
+  background-color: #3498db;
+  border: none;
+  padding: 0.5em 0.7em;
+  font-family: "Signika", sans-serif;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0px 0.15em 0px #2d7db3;
+  -webkit-transform: translate3d(0px, 0px, 0px);
+  -ms-transform: translate3d(0px, 0px, 0px);
+  -moz-transform: translate3d(0px, 0px, 0px);
+  -o-transform: translate3d(0px, 0px, 0px);
+  transform: translate3d(0px, 0px, 0px);
+  -webkit-transition: all 0.05s ease;
+  -ms-transition: all 0.05s ease;
+  -moz-transition: all 0.05s ease;
+  -o-transition: all 0.05s ease;
+  transition: all 0.05s ease; }
+  button:active {
+    -webkit-transform: translate3d(0px, 0.15em, 0px);
+    -ms-transform: translate3d(0px, 0.15em, 0px);
+    -moz-transform: translate3d(0px, 0.15em, 0px);
+    -o-transform: translate3d(0px, 0.15em, 0px);
+    transform: translate3d(0px, 0.15em, 0px);
+    box-shadow: 0px 0em 0px #2d7db3;
+    vertical-align: top; }
+  button:disabled {
+    opacity: 0.7;
+    box-shadow: 0px 0em 0px #2d7db3;
+    cursor: inherit; }
+  button.floatright {
+    float: right; }
+
+[am-Footer] {
+  width: 960px;
+  margin: auto;
+  display: block;
+  text-align: right;
+  padding: 20px 0px;
+  color: grey; }
+
+[am-LandingBoxCenter] {
+  text-align: center; }
+  [am-LandingBoxCenter] h1 {
+    font-size: 65px;
+    margin: 0px 0px 20px 0px;
+    color: white; }
+  [am-LandingBoxCenter] p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.05em; }
+  [am-LandingBoxCenter] button {
+    font-size: 1.5em; }
+
+[am-LandingFooter] {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  text-align: center;
+  padding: 40px 0px; }
+  [am-LandingFooter] a {
+    text-decoration: none; }
+  [am-LandingFooter] span.sirikonme {
+    font-family: "Kaushan Script";
+    font-size: 30px;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none; }
+    [am-LandingFooter] span.sirikonme b {
+      color: rgba(255, 255, 255, 0.6); }
+
+/*# sourceMappingURL=main.css.map */
