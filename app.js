@@ -34,6 +34,11 @@ app.use(session({
 
 Routes(app);
 
+// 404
+app.use(function(req, res, next) {
+  res.redirect('/');
+});
+
 /* Server initialization */
 app.listen(Config.PORT, function() {
   console.log("Listening on " + Config.PORT);

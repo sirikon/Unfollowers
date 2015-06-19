@@ -6,8 +6,8 @@ var UserLoggedIn = function(req, res, next){
 
 	var getUserById = function(){
 		User.findOne({user_id: req.session.user_id}, function(err, doc){
-			if(err){
-				res.send(err);
+			if(err || !doc){
+				res.send(err || "User not found");
 			}else{
 				req.user = doc;
 				next();

@@ -26,26 +26,28 @@ var TwitterCallback = function(req, res){
 	}
 
 	var updateOrCreateUser = function(data, accessToken, accessTokenSecret){
-		User.UpdateOrCreate(
-				data.id_str,
-				data.name,
-				data.profile_image_url,
-				accessToken,
-				accessTokenSecret,
-				function(error){
-					if(error){
-						handleError(error);
-					}else{
-						req.session.loggedin = true;
-						req.session.user_id = data.id_str;
-						redirect();
-					}
-				}
-		);
+		var userObject = {
+			name: data.name,
+			screen_name: data.screen_name,
+			picture: data.profile_image_url,
+			twitter: {
+				accessToken: accessToken,
+				accessTokenSecret: accessTokenSecret
+			}
+		}
+		User.update({user_id: data.id_str}, userObject, {upsert: true}, function (error) {
+			if(error){
+				handleError(error);
+			}else{
+				req.session.loggedin = true;
+				req.session.user_id = data.id_str;
+				redirect();
+			}
+		});
 	}
 
 	var redirect = function(){
-		res.redirect('/listreports');
+		res.redirect('/home');
 	}
 
 	var handleError = function(error){

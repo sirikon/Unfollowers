@@ -9,7 +9,34 @@
 
 	<div am-Header>
 		<div>
-			<h1>Unfollowers <i class="fa fa-twitter fa-lg"></i></h1>
+			<h1>
+				Unfollowers
+				<span>β</span>
+			</h1>
+
+			<form id="genreport" action="/genreport" method="post">
+				<button><i class="fa fa-file-text" style="margin-right:5px;"></i> <span>Generate report</span></button>
+			</form>
+
+			<div am-ProfileWidget>
+				<div class="container">
+					<img src="{{{twitter_picture_big user.picture}}}" alt="">
+					<span class="username">{{user.name}}</span>
+					<i class="fa fa-chevron-down"></i>
+				</div>
+				<div class="dropmenu">
+					<div class="filltop"></div>
+					<ul>
+						<a href="/auth/logout">
+							<li>
+								<i class="fa fa-power-off"></i> Logout
+							</li>
+						</a>
+							
+					</ul>
+				</div>
+			</div>
+
 		</div>
 	</div>
 
@@ -22,6 +49,7 @@
 	<div am-Footer>
 		by <b>Sirikon</b>
 	</div>
-
+	
+	<script type="text/javascript" src="/static/js/main.js"></script>
 </body>
 </html>

@@ -13,10 +13,10 @@ var UserSchema = new Schema({
 	name: {type: String},
 	screen_name: {type: String},
 	picture: {type: String},
+	lastFollowers: {type: String},
 	twitter: {
 		accessToken: {type: String},
-		accessTokenSecret: {type: String},
-		lastFollowers: {type: String}
+		accessTokenSecret: {type: String}
 	}
 });
 
@@ -62,42 +62,15 @@ UserSchema.methods.getFollowers = function(){
 
 UserSchema.methods.getPreviousFollowersList = function(){
 	var result = [];
-	if(this.twitter.lastFollowers){
-		result = JSON.parse(this.twitter.lastFollowers);
+	if(this.lastFollowers){
+		result = JSON.parse(this.lastFollowers);
 	}
 	return result;
 }
 
 UserSchema.methods.setPreviousFollowersList = function(list){
-	this.twitter.lastFollowers = JSON.stringify(list);
+	this.lastFollowers = JSON.stringify(list);
 	this.save();
-}
-
-/*
- * void UpdateOrCreate(user_id, name, picture, accessToken, accessTokenSecret, callback)
- * Creates or updates an existing user with updated information.
- */
-UserSchema.statics.UpdateOrCreate = function(user_id, name, picture, accessToken, accessTokenSecret, callback){
-	var newUser = new User({
-		user_id: user_id,
-		name: name,
-		picture: picture,
-		twitter: {
-			accessToken: accessToken,
-			accessTokenSecret: accessTokenSecret
-		}
-	});
-	newUser.save(function(err){
-		if(err){
-			if(err.code = 11000){
-				callback(null);
-			}else{
-				callback(err);
-			}
-		}else{
-			callback(null);
-		}
-	});
 }
 
 var User = mongoose.model('User',UserSchema);

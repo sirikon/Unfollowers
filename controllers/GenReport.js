@@ -12,7 +12,7 @@ var GenReport = function(req, res){
 			if(err){
 				res.send(err);
 			}else{
-				res.redirect('/listreports');
+				res.redirect('/home');
 			}
 		});
 	});
