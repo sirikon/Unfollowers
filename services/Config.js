@@ -2,7 +2,7 @@
 
 var Config = {
 	SESSION_SECRET: process.env.SESSION_SECRET || '1234567890QWERTY',
-	MONGODB_URI: process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/unfollowers_dev',
+	MONGODB_URI: process.env.MONGODB_URI || 'mongodb://localhost/unfollowers_dev',
 	PORT: Number(process.env.PORT || 5000),
 	TWITTER_CONSUMER_KEY: process.env.TWITTER_CONSUMER_KEY,
 	TWITTER_CONSUMER_SECRET: process.env.TWITTER_CONSUMER_SECRET,
