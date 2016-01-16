@@ -73,7 +73,7 @@ TwitterProfileSchema.statics.lookup = function(user, list, callback){
 				_id: item.id_str,
 				name: item.name,
 				screen_name: item.screen_name,
-				picture: item.profile_image_url
+				picture: item.profile_image_url_https
 			}, {upsert: true}, function (err) {
 				upsertDone();
 			});

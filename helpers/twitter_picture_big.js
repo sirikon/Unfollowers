@@ -3,7 +3,7 @@
 const Handlebars = require('handlebars');
 
 Handlebars.registerHelper('twitter_picture_big', function(url) {
-	if(url && url instanceof String){
+	if(url && typeof url === "string"){
 		return url.replace("_normal","");
 	}else{
 		return url;
