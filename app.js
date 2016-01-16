@@ -1,12 +1,12 @@
 'use strict';
 
 // Requires
-var express = require('express');
-var exphbs = require('express-handlebars');
-var cookieParser = require('cookie-parser');
-var session = require('express-session');
-var logfmt = require('logfmt');
-var MongoStore = require('connect-mongo')(session);
+const express = require('express');
+const exphbs = require('express-handlebars');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
+const logfmt = require('logfmt');
+const MongoStore = require('connect-mongo')(session);
 
 var Config = require('./services/Config.js');
 var Routes = require('./routes.js');
@@ -14,8 +14,8 @@ require('./helpers');
 
 // Init the app instance
 var app = express();
-app.engine('handlebars', exphbs({defaultLayout: 'main'}));
-app.set('view engine', 'handlebars');
+app.engine('.hbs', exphbs({defaultLayout: 'main', extname: '.hbs', handlebars: require('handlebars')}));
+app.set('view engine', 'hbs');
 
 // Use logfmt for logging to console all the access
 app.use(logfmt.requestLogger());

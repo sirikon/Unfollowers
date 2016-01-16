@@ -1,7 +1,7 @@
 'use strict';
 
-var Handlebars = require('handlebars');
-var moment = require('moment');
+const Handlebars = require('handlebars');
+const moment = require('moment');
 
 Handlebars.registerHelper('date_from_now', function(date) {
 	if(date){
