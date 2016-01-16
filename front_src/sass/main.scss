@@ -260,6 +260,10 @@ article {
 		background-color: rgba(252, 252, 252, 1);
 		margin: -1px 0px 0px 0px;
 		padding: 0.5em 0.7em;
+
+		i.fa {
+			display: inline;
+		}
 	}
 
 	&.profile {

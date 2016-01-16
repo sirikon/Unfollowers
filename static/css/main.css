@@ -279,6 +279,8 @@ article {
     background-color: #fcfcfc;
     margin: -1px 0px 0px 0px;
     padding: 0.5em 0.7em; }
+    article div.date i.fa {
+      display: inline; }
   article.profile img {
     vertical-align: top;
     width: 72px;

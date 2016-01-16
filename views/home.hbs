@@ -1,35 +1,3 @@
 {{#each reports}}
-	<article>
-		<div class="date"><i class="fa fa-clock-o" style="display:inline;"></i> {{{date_from_now date}}}</div>
-		{{#if unfollowers}}
-			<h1>Unfollowers</h1>
-			<ul>
-				{{#each unfollowers}}
-					<li>
-						<a href="http://twitter.com/{{screen_name}}" target="_blank">
-							<img src="{{twitter_picture screen_name 'bigger'}}" alt="">
-							<span class="name">{{name}}</span>
-							<span class="screen_name">@{{screen_name}}</span>
-						</a>
-					</li>
-				{{/each}}
-			</ul>
-		{{/if}}
-
-		{{#if newfollowers}}
-			<h1>New followers</h1>
-			<ul>
-				{{#each newfollowers}}
-					<li>
-						<a href="http://twitter.com/{{screen_name}}" target="_blank">
-							<img src="{{twitter_picture screen_name 'bigger'}}" alt="">
-							<span class="name">{{name}}</span>
-							<span class="screen_name">@{{screen_name}}</span>
-						</a>
-					</li>
-				{{/each}}
-			</ul>
-		{{/if}}
-
-	</article>
+	{{> report }}
 {{/each}}
