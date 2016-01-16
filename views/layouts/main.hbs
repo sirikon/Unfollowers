@@ -22,7 +22,7 @@
 
 			<div am-ProfileWidget>
 				<div class="container">
-					<img src="{{{twitter_picture_big user.picture}}}" alt="">
+					<img src="{{{twitter_picture user.screen_name 'original'}}}" alt="">
 					<span class="username">{{user.name}}</span>
 					<i class="fa fa-chevron-down"></i>
 				</div>
@@ -34,7 +34,7 @@
 								<i class="fa fa-power-off"></i> Logout
 							</li>
 						</a>
-							
+
 					</ul>
 				</div>
 			</div>
@@ -43,7 +43,7 @@
 	</div>
 
 	<div am-Content>
-		
+
 		{{{body}}}
 
 	</div>
@@ -51,7 +51,7 @@
 	<div am-Footer>
 		by <b>Sirikon</b>
 	</div>
-	
+
 	<script type="text/javascript" src="/static/js/main.js"></script>
 </body>
 </html>
