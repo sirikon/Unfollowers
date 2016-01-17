@@ -1,7 +1,7 @@
 'use strict';
 
-var Twitter = require('../services/Twitter.js');
-var Report = require('../models/Report.js');
+var Twitter = require('../../services/Twitter.js');
+var Report = require('../../models/Report.js');
 
 var GenReport = function(req, res){
 	req.user.getFollowers(function(err, actual_followers){

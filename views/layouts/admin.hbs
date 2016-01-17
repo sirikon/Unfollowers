@@ -1,0 +1,26 @@
+{{> signature }}
+<!DOCTYPE html>
+<html>
+<head>
+	{{> head }}
+</head>
+<body>
+
+  <div am-Header>
+    <div>
+      <h1>
+        Unfollowers
+        <span>β</span>
+      </h1>
+      {{#if loggedin}}
+        <a href="/admin/logout">Logout</a>
+      {{/if}}
+    </div>
+  </div>
+
+  <div am-Content>
+    {{{body}}}
+  </div>
+
+</body>
+</html>

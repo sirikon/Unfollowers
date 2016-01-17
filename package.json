@@ -25,7 +25,8 @@
     "express-handlebars": "~2.0.1",
     "require-directory": "~2.1.1",
     "connect-mongo": "~1.1.0",
-    "moment": "~2.11.1"
+    "moment": "~2.11.1",
+    "body-parser": "~1.14.2"
   },
   "engines": {
     "node": "5.4.x"

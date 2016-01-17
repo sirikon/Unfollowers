@@ -1,6 +1,6 @@
 'use strict';
 
-var Twitter = require('../services/Twitter.js');
+var Twitter = require('../../services/Twitter.js');
 
 var TwitterLogin = function(req, res){
 

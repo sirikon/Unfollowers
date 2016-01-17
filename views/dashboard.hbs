@@ -1,0 +1,15 @@
+<article>
+  <h1>Registered users</h1>
+
+  <ul>
+    {{#each users}}
+      <li>
+        <a href="http://twitter.com/{{screen_name}}" target="_blank">
+          @{{screen_name}}
+        </a>
+        {{name}}
+      </li>
+    {{/each}}
+  </ul>
+
+</article>

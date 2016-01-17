@@ -9,7 +9,8 @@ body {
   font-family: "Signika", sans-serif;
   background-color: #ecf0f1;
   margin: 0px;
-  padding: 74px 0px 0px 0px; }
+  padding: 74px 0px 0px 0px;
+  box-sizing: border-box; }
   body.wait {
     cursor: wait; }
   body.landing {

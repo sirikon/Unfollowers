@@ -7,6 +7,13 @@ var Config = {
 	TWITTER_CONSUMER_KEY: process.env.TWITTER_CONSUMER_KEY,
 	TWITTER_CONSUMER_SECRET: process.env.TWITTER_CONSUMER_SECRET,
 	TWITTER_API_CALLBACK: process.env.TWITTER_API_CALLBACK || 'http://127.0.0.1:5000/auth/twitter/callback',
+	ADMIN_USERNAME: process.env.ADMIN_USERNAME,
+	ADMIN_PASSWORD: process.env.ADMIN_PASSWORD
+}
+
+if(!Config.ADMIN_USERNAME || !Config.ADMIN_PASSWORD){
+	console.log('ADMIN_USERNAME and ADMIN_PASSWORD are required');
+	process.exit(1);
 }
 
 if(!Config.TWITTER_CONSUMER_KEY){

@@ -1,7 +1,7 @@
 'use strict';
 
-var Twitter = require('../services/Twitter.js');
-var User = require('../models/User.js');
+var Twitter = require('../../services/Twitter.js');
+var User = require('../../models/User.js');
 
 var TwitterCallback = function(req, res){
 

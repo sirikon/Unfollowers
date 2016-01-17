@@ -13,6 +13,7 @@ body {
 	background-color: rgb(236, 240, 241);
 	margin: 0px;
 	padding: 74px 0px 0px 0px;
+	box-sizing: border-box;
 
 	&.wait {
 		cursor: wait;

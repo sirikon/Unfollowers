@@ -1,8 +1,8 @@
 'use strict';
 
-var Report = require('../models/Report.js');
+var Report = require('../../models/Report.js');
 
-var APIReportList = function(req, res){
+var ReportList = function(req, res){
 	Report
     .find({user_id: req.user.user_id})
     .sort('-date')
@@ -14,4 +14,4 @@ var APIReportList = function(req, res){
   	});
 }
 
-module.exports = APIReportList;
+module.exports = ReportList;
