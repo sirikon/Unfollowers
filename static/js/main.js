@@ -1,38 +1,33 @@
 'use strict';
 
 var GenReportLoadingBehaviour = function(){
-	var element = document.getElementById("genreport");
-	if(element){
-		var button = element.querySelector('button');
-		element.addEventListener('submit', function(){
-			button.setAttribute('disabled', 'true');
-			button.querySelector("span").textContent = "Generating report...";
-			document.body.className = "wait";
+	var genReportForm = $('#genreport');
+	if(genReportForm){
+		var genReportButton = $('button', genReportForm);
+		genReportForm.addEventListener('submit', function() {
+			genReportButton.setAttribute('disabled', 'true');
+			$('span', genReportButton).textContent = 'Generating report...';
+			$('body').classList.add('wait');
 		});
 	}
 }
 
 var OpenProfileWidgetBehaviour = function(){
-	var element = document.querySelector("[am-ProfileWidget]");
-	if(element){
-		var container = document.querySelector("[am-ProfileWidget] .container");
-		container.addEventListener('click', function(){
-			if(element.className.indexOf("open") >= 0){
-				element.className = element.className.replace(" open","");
-			}else{
-				element.className += " open";
-			}
+	var profileWidget = $('[am-ProfileWidget]');
+	if(profileWidget){
+		$(".container", profileWidget).addEventListener('click', function(){
+			profileWidget.classList.toggle('open');
 		});
 	}
 }
 
 var LoginWithTwitterLoadingBehaviour = function(){
-	var element = document.querySelector("#loginwithtwitter");
-	if(element){
-		var button = element.querySelector('button');
-		element.addEventListener('click', function(){
-			button.setAttribute("disabled",true);
-			button.innerHTML = '<i class="fa fa-spinner fa-spin fa-lg">';
+	var loginButtonContainer = $('#loginwithtwitter');
+	if(loginButtonContainer){
+		var loginButton = $('button', loginButton);
+		loginButtonContainer.addEventListener('click', function(){
+			loginButton.setAttribute('disabled', true);
+			loginButton.innerHTML = '<i class="fa fa-spinner fa-spin fa-lg">';
 		});
 	}
 }
