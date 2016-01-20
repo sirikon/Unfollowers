@@ -1,0 +1,7 @@
+@import "../general/variables";
+
+[am-Content] {
+	width: $content-max-width;
+	margin: auto;
+	display: block;
+}

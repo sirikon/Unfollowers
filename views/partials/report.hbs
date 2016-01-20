@@ -1,10 +1,10 @@
-<article>
+<div am-Report>
   <div class="date">
     <i class="fa fa-clock-o"></i> {{{date_from_now date}}}
   </div>
 
   {{#if unfollowers}}
-    <h1>Unfollowers</h1>
+    <h2>Unfollowers</h2>
     <ul>
       {{#each unfollowers}}
         {{> twitter_profile }}
@@ -13,7 +13,7 @@
   {{/if}}
 
   {{#if newfollowers}}
-    <h1>New followers</h1>
+    <h2>New followers</h2>
     <ul>
       {{#each newfollowers}}
         {{> twitter_profile }}
@@ -21,4 +21,4 @@
     </ul>
   {{/if}}
 
-</article>
+</div>

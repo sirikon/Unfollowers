@@ -6,11 +6,10 @@ var mw = require('./middlewares');
 var controllers = require('./controllers');
 
 var Routes = function(app){
-
 	// Web Client
 	app.get('/', controllers.Web.Landing);
 
-	app.post('/genreport',   mw.UserLoggedIn, controllers.Web.GenReport);
+	app.post('/genreport',   mw.UserLoggedIn, controllers.Web.GenReport, controllers.Web.Error);
 	app.get('/home',         mw.UserLoggedIn, controllers.Web.Home);
 
 	app.get('/auth/twitter/login',    controllers.Web.TwitterLogin);

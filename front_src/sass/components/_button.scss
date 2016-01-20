@@ -1,0 +1,31 @@
+button {
+	@include vp(appearance, none);
+	margin: 15px 0px;
+	background-color: #3498db;
+	border: none;
+	padding: 0.5em 0.7em;
+	font-family: "Signika", sans-serif;
+	font-size: 18px;
+	color: white;
+	cursor: pointer;
+	box-shadow: 0px 0.15em 0px rgb(45, 125, 179);
+	@include vp(transform, translate3d(0px, 0px, 0px));
+	@include vp(transition, all 0.05s ease);
+
+	&:active {
+		@include vp(transform, translate3d(0px, 0.15em, 0px));
+		box-shadow: 0px 0em 0px rgb(45, 125, 179);
+		vertical-align: top;
+	}
+
+	&:disabled {
+		@include vp(transform, translate3d(0px, 0.15em, 0px));
+		opacity: 0.7;
+		box-shadow: 0px 0em 0px rgb(45, 125, 179);
+		cursor: inherit;
+	}
+
+	&.floatright {
+		float: right;
+	}
+}

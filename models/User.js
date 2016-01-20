@@ -1,4 +1,5 @@
-/* Dependencies */
+'use strict';
+
 var db = require('../services/MongoDB.js');
 var Twitter = require('../services/Twitter.js');
 var Report = require('./Report.js');
@@ -8,15 +9,12 @@ var mongoose = db.mongoose;
 
 var listToJson = function(list) {
 	return JSON.stringify(list);
-}
+};
 
 var jsonToList = function(data) {
-	return JSON.parse(data || []);
-}
+	return JSON.parse(data || '[]');
+};
 
-/*
- * Model Schema declaration
- */
 var UserSchema = new Schema({
 	user_id: {type: String, unique: true, required: true, index: true},
 	name: {type: String},

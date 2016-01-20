@@ -1,0 +1,10 @@
+@import "../general/variables";
+
+[am-Footer] {
+	width: $content-max-width;
+	margin: auto;
+	display: block;
+	text-align: right;
+	padding: 20px 0px;
+	color: grey;
+}

@@ -1,0 +1,24 @@
+[am-LandingBoxCenter] {
+	text-align: center;
+	h1 {
+		font-size: 65px;
+		margin: 0px 0px 20px 0px;
+		color: white;
+		position: relative;
+
+		span {
+			position: absolute;
+			top: 0px;
+			right: -14px;
+			font-size: 34px;
+			color: rgba(255, 255, 255, 0.7);
+		}
+	}
+	p {
+		color: rgba(255,255,255,0.8);
+		font-size: 1.05em;
+	}
+	button {
+		font-size: 1.5em;
+	}
+}

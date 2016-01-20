@@ -1,0 +1,22 @@
+@import "variables";
+@import "mixins";
+
+body.landing {
+	padding: 0px;
+	background-color: $primary-color;
+	display: flex;
+	display: -webkit-flex;
+	@include vp(flex-wrap, wrap);
+	@include vp(justify-content, center);
+	@include vp(align-items, center);
+	@include vp(align-content, center);
+	@include vp(flex-direction, row);
+
+	h1, button, span {
+		@include vp(user-select, none);
+	}
+
+	h1 {
+		cursor: default;
+	}
+}

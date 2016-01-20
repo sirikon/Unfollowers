@@ -1,0 +1,98 @@
+[am-ProfileWidget] {
+  height: 100%;
+  @include vp(perspective-origin, center);
+  @include vp(perspective, 500px);
+  position: relative;
+
+  > div.container {
+    height: 100%;
+    display: flex;
+    display: -webkit-flex;
+    @include vp(align-items, center);
+    background-color: rgba(219, 72, 56, 1);
+    padding: 0px 11px;
+    cursor: pointer;
+    @include vp(transition, all 0.2s ease);
+    z-index: 50;
+    position: relative;
+
+    img {
+      height: 48px;
+      width: 48px;
+      margin-right: 5px;
+    }
+    span.username {
+      font-size: 20px;
+    }
+
+    > .fa {
+      position: absolute;
+      bottom: 5px;
+      left: 50%;
+      margin-left: -5px;
+      font-size: 10px;
+      color: rgb(195, 47, 32);
+    }
+  }
+
+  > div.dropmenu {
+    background-color: rgb(195, 47, 32);
+    color: white;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    @include vp(box-sizing, border-box);
+    @include vp(transform, translate3d(0px, 0%, 0px));
+    @include vp(transition, all 0.2s ease);
+    box-shadow: 0px 0px 0px rgb(145, 26, 14);
+    z-index: 45;
+
+    ul {
+      list-style: none;
+      margin: 0px;
+      padding: 0px;
+
+      > a {
+        text-decoration: none;
+        color: white;
+      }
+
+      li {
+        color: white;
+        text-decoration: none;
+        padding: 7px 10px;
+
+        i.fa {
+          margin-right: 7px;
+        }
+
+        &:hover {
+          background-color: rgba(0,0,0,0.1);
+          cursor: pointer;
+        }
+      }
+    }
+
+    div.filltop {
+      background-color: inherit;
+      position: absolute;
+      top: -10px;
+      left: 0px;
+      width: 100%;
+      height: 10px;
+    }
+  }
+
+  &.open {
+    > div.container {
+      @include vp(transform-origin, top);
+      @include vp(transform, rotateX(25deg));
+    }
+
+    > div.dropmenu {
+      box-shadow: 0px 4px 0px rgb(145, 26, 14);
+      @include vp(transform, translate3d(0px, 100%, 0px));
+    }
+  }
+}

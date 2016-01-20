@@ -1,0 +1,30 @@
+@import "../general/variables";
+
+$icon-box-width: 60px;
+
+[am-Error] {
+  background-color: $error-color;
+  margin-top: 15px;
+  display: table;
+  width: 100%;
+  color: white;
+
+  > div {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  > div.error-icon {
+    width: $icon-box-width;
+    text-align: center;
+    font-size: 2.2em;
+  }
+
+  > div.error-message {
+    padding: 10px 0;
+  }
+
+  h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+  }
+}

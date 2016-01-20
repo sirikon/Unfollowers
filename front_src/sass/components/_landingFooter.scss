@@ -1,0 +1,38 @@
+[am-LandingFooter] {
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	padding: 40px 0px 0px 0px;
+
+	a {
+		text-decoration: none;
+	}
+
+	div {
+		text-align: center;
+		padding: 5px;
+	}
+
+	div.align-right {
+		text-align: right;
+		padding: 0px 18px 16px 0px;
+	}
+
+	span {
+		display: inline-block;
+		color: rgba(255,255,255,0.8);
+		text-align: right;
+	}
+
+	span.sirikonme {
+		text-align: center;
+		font-family: "Kaushan Script";
+		font-size: 30px;
+		text-decoration: none;
+
+		b {
+			color: rgba(255,255,255,0.6);
+		}
+	}
+}

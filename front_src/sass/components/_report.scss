@@ -1,0 +1,90 @@
+[am-Report] {
+	background-color: white;
+	padding: 1px 15px;
+	margin-top: 15px;
+  clear: both;
+
+	h1, h2, h3, h4, h5, h6 {
+		margin: 14px 0 15px 0;
+    line-height: 1em;
+	}
+
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 15px 0 10px -5px;
+		display: flex;
+		display: -webkit-flex;
+		@include vp(flex-wrap, wrap);
+
+		li {
+			display: inline-block;
+			min-width: 250px;
+			@include vp(flex-basis, 250px);
+			@include vp(flex-grow, 1);
+			margin: 0px 0px 5px 5px;
+			background-color: rgba(0,0,0,0.01);
+			max-width: 307px;
+
+			a {
+				text-decoration: none;
+				color: inherit;
+			}
+
+			img {
+				float: left;
+				width: 48px;
+				height: 48px;
+			}
+
+			span.name {
+				text-decoration: none;
+				color: inherit;
+				display: block;
+				line-height: 28px;
+				font-size: 20px;
+				margin-left: 55px;
+			}
+
+			span.screen_name {
+				text-decoration: none;
+				color: rgba(0,0,0,0.5);
+				display: block;
+				line-height: 20px;
+				font-size: 13px;
+				margin-left: 55px;
+			}
+		}
+	}
+
+	div.date {
+		display: inline-block;
+		float: right;
+		background-color: rgba(252, 252, 252, 1);
+		margin: -1px 0px 0px 0px;
+		padding: 0.5em 0.7em;
+
+		i.fa {
+			display: inline;
+		}
+	}
+
+	&.profile {
+		img {
+			vertical-align: top;
+			width: 72px;
+			height: 72px;
+			margin: -1px 15px -1px -15px;
+		}
+
+		h1 {
+			display: inline-block;
+			margin: 0px;
+			line-height: 70px;
+		}
+
+		form {
+			float: right;
+		}
+	}
+}

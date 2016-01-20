@@ -28,10 +28,10 @@ module.exports = {
       const secret = user.twitter.accessTokenSecret;
 
       var requests = [];
-    	var numberOfRequests = Math.ceil( list.length / 100 );
+    	var numberOfRequests = Math.ceil( ids.length / 100 );
 
       for (var i = 0; i < numberOfRequests; i++) {
-        requests.push(lookupRequest(token, secret, ids.splice(100)));
+        requests.push(lookupRequest(token, secret, ids.splice(-100)));
       }
 
       Promise.all(requests).then((users) => {
@@ -59,7 +59,7 @@ module.exports = {
               reject(error);
             } else {
               var ids = data.ids;
-              cursor !== -1 && ids.shift();
+              requestOptions.cursor !== -1 && ids.shift();
               result = result.concat(ids);
               if (data.next_cursor === 0) {
                 resolve(result);

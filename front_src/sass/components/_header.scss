@@ -1,0 +1,48 @@
+[am-Header] {
+	background-color: rgb(231, 76, 60);
+	margin: auto;
+	display: block;
+	border: 0px solid rgb(195, 47, 32);
+	border-width: 0px 0px 0.3em 0px;
+	height: 70px;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+
+	* {
+		@include vp(user-select, none);
+	}
+
+	> div {
+		display: block;
+		margin: auto;
+		width: 960px;
+		color: white;
+		display: flex;
+		display: -webkit-flex;
+		height: 70px;
+		@include vp(align-items, center);
+
+		h1 {
+			cursor: default;
+			margin: 0px;
+			flex-basis: 190px;
+			position: relative;
+
+			span {
+				position: absolute;
+				top: 0px;
+				right: 6px;
+				font-size: 16px;
+				color: rgba(255, 255, 255, 0.7);
+			}
+		}
+
+		#genreport {
+			@include vp(flex-grow, 1);
+			text-align: right;
+			padding: 0px 22px;
+		}
+	}
+}
