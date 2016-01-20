@@ -10,7 +10,11 @@ var Home = function(req, res){
 		.populate('newfollowers')
 		.populate('unfollowers')
 		.exec(function(err, docs){
-			res.render('home', {reports:docs, user:req.user, error: req.query.error === '1'});
+			res.render('home', {
+				reports: docs,
+				user: req.user,
+				error: req.query.error === '1'
+			});
 		});
 }
 
