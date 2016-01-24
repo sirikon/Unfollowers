@@ -15,13 +15,13 @@ var VerifyTwitterCredentials = function(req, res){
 			name: data.name,
 			screen_name: data.screen_name,
 			twitter: {
-				accessToken: result.accessToken,
-				accessTokenSecret: result.accessTokenSecret
+				accessToken: req.body.token,
+				accessTokenSecret: req.body.token_secret
 			}
 		}).then(() => {
 			req.session.loggedin = true;
 			req.session.user_id = data.id_str;
-			res.send({status: true, session_id: req.sessionID});
+			res.send({status: true});
 		}, handleError);
 	}, handleError);
 
