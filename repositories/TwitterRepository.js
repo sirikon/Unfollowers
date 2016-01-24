@@ -100,7 +100,7 @@ module.exports = {
     return new Promise((resolve, reject) => {
       Twitter.verifyCredentials(accessToken, accessTokenSecret, function(error, data, response) {
         if(error){
-          reject();
+          reject(error);
         }else{
           resolve(data);
         }

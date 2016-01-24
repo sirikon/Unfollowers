@@ -5,8 +5,8 @@ var UserRepository = require('../../repositories/UserRepository');
 
 var VerifyTwitterCredentials = function(req, res){
 
-  var handleError = () => {
-		res.send({status: false});
+  var handleError = (error) => {
+		res.send({status: false, error: error});
 	};
 
 	TwitterRepository.verifyCredentials(req.body.token, req.body.token_secret).then((data) => {
