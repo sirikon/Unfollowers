@@ -73,5 +73,38 @@ module.exports = {
 
       iterate();
     });
+  },
+  getRequestToken: function() {
+    return new Promise((resolve, reject) => {
+      Twitter.getRequestToken((error, requestToken, requestTokenSecret, results) => {
+        if(error){
+          reject(error);
+        }else{
+          resolve({requestToken: requestToken, requestTokenSecret: requestTokenSecret});
+        }
+      });
+    });
+  },
+  getAccessToken: function(token, tokenSecret, oauthVerifier) {
+    return new Promise((resolve, reject) => {
+      Twitter.getAccessToken(token, tokenSecret, oauthVerifier, (error, accessToken, accessTokenSecret, results) => {
+        if(error){
+          reject(error);
+        }else{
+          resolve({accessToken: accessToken, accessTokenSecret: accessTokenSecret});
+        }
+      });
+    });
+  },
+  verifyCredentials: function(accessToken, accessTokenSecret) {
+    return new Promise((resolve, reject) => {
+      Twitter.verifyCredentials(accessToken, accessTokenSecret, function(error, data, response) {
+        if(error){
+          reject();
+        }else{
+          resolve(data);
+        }
+      });
+    });
   }
 }

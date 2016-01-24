@@ -1,60 +1,31 @@
 'use strict';
 
-var Twitter = require('../../services/Twitter.js');
-var User = require('../../models/User.js');
+var TwitterRepository = require('../../repositories/TwitterRepository');
+var UserRepository = require('../../repositories/UserRepository');
 
 var TwitterCallback = function(req, res){
 
-	var getAccessToken = function(){
-		Twitter.getAccessToken(req.session.token, req.session.tokenSecret, req.query.oauth_verifier, function(error, accessToken, accessTokenSecret, results) {
-			if(error){
-				handleError(error);
-			}else{
-				verifyCredentials(accessToken, accessTokenSecret);
-			}
-		});
-	}
-
-	var verifyCredentials = function(accessToken, accessTokenSecret){
-		Twitter.verifyCredentials(accessToken, accessTokenSecret, function(error, data, response) {
-		    if(error){
-		        handleError(error);
-		    }else{
-		    	updateOrCreateUser(data, accessToken, accessTokenSecret);
-		    }
-		});
-	}
-
-	var updateOrCreateUser = function(data, accessToken, accessTokenSecret){
-		var userObject = {
-			name: data.name,
-			screen_name: data.screen_name,
-			picture: data.profile_image_url,
-			twitter: {
-				accessToken: accessToken,
-				accessTokenSecret: accessTokenSecret
-			}
-		}
-		User.update({user_id: data.id_str}, userObject, {upsert: true}, function (error) {
-			if(error){
-				handleError(error);
-			}else{
+	TwitterRepository.getAccessToken(req.session.token, req.session.tokenSecret, req.query.oauth_verifier).then((result) => {
+		TwitterRepository.verifyCredentials(result.accessToken, result.accessTokenSecret).then((data) => {
+			UserRepository.addOrUpdate({
+				user_id: data.id_str,
+				name: data.name,
+				screen_name: data.screen_name,
+				twitter: {
+					accessToken: result.accessToken,
+					accessTokenSecret: result.accessTokenSecret
+				}
+			}).then(() => {
 				req.session.loggedin = true;
 				req.session.user_id = data.id_str;
-				redirect();
-			}
-		});
-	}
+				res.redirect('/home');
+			}, handleError);
+		}, handleError);
+	}, handleError);
 
-	var redirect = function(){
-		res.redirect('/home');
+	var handleError = () => {
+		res.send('There was an error with Twitter connectivity... try again later');
 	}
-
-	var handleError = function(error){
-		res.send(error);
-	}
-
-	getAccessToken();
 
 }
 

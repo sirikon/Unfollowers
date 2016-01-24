@@ -1,30 +1,16 @@
 'use strict';
 
-var Twitter = require('../../services/Twitter.js');
+var TwitterRepository = require('../../repositories/TwitterRepository');
 
 var TwitterLogin = function(req, res){
 
-	var getRequestToken = function(){
-		Twitter.getRequestToken(function(error, requestToken, requestTokenSecret, results){
-			if(error){
-				handleError(error);
-			}else{
-				redirect(requestToken, requestTokenSecret);
-			}
-		});
-	}
-
-	var handleError = function(error){
-		res.send(error);
-	}
-
-	var redirect = function(requestToken, requestTokenSecret){
-		req.session.token 		= requestToken;
-		req.session.tokenSecret = requestTokenSecret;
-		res.redirect('https://twitter.com/oauth/authenticate?oauth_token=' + requestToken);
-	}
-
-	getRequestToken();
+	TwitterRepository.getRequestToken().then((result) => {
+		req.session.token = result.requestToken;
+		req.session.tokenSecret = result.requestTokenSecret;
+		res.redirect('https://twitter.com/oauth/authenticate?oauth_token=' + result.requestToken);
+	}, (error) => {
+		res.send('There was an error with Twitter connectivity... try again later');
+	});
 
 }
 
