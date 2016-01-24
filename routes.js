@@ -23,6 +23,7 @@ var Routes = function(app){
 	app.get('/admin',       mw.AdminLoggedIn, controllers.Admin.Dashboard);
 
 	// API
+	app.post('/api/verifycredentials', 	mw.CORS,	   controllers.API.VerifyTwitterCredentials);
 	app.get('/api/reports', mw.UserLoggedIn, controllers.API.ReportList);
 }
 
