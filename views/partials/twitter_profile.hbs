@@ -1,6 +1,8 @@
 <li>
   <a href="http://twitter.com/{{screen_name}}" target="_blank">
-    <img src="{{twitter_picture screen_name 'bigger'}}" alt="@{{screen_name}}">
+    <img preload-src="{{twitter_picture screen_name 'bigger'}}"
+         src="/static/img/image_loading.png"
+         alt="@{{screen_name}}">
     <span class="name">{{name}}</span>
     <span class="screen_name">@{{screen_name}}</span>
   </a>
