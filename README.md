@@ -15,7 +15,7 @@ Every unfollowers app that I found online had the required permission to send tw
 ## Requirements ##
  * Node.js
  * Twitter App credentials
- * MongoDB database
+ * MongoDB database (version ~3.0.0)
 
 ## Run ##
 First, set the environment variables for Twitter credentials

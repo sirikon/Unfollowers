@@ -7,7 +7,7 @@ module.exports = {
     return new Promise((resolve, reject) => {
       User.update({user_id: item.user_id}, item, {upsert: true}, (err) => {
         if (err) {
-          reject();
+          reject(err);
         } else {
           resolve();
         }

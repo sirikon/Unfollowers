@@ -6,7 +6,7 @@ module.exports = {
   createReport: function(user, diff) {
     return new Promise((resolve, reject) => {
       if (!diff.added.length && !diff.removed.length) {
-        reject();
+        reject(new Error("Diff data is empty"));
       } else {
         var newReport = new Report({
           user_id: user.user_id,

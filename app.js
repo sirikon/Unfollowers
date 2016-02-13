@@ -20,8 +20,9 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.engine('.hbs', exphbs({defaultLayout: 'main', extname: '.hbs', handlebars: require('handlebars')}));
 app.set('view engine', 'hbs');
 
-// Use logfmt for logging to console all the access
-app.use(logfmt.requestLogger());
+if (Config.LOG_ENABLED) {
+    app.use(logfmt.requestLogger());
+}
 
 // Static resources
 app.use('/static', express.static('static'));

@@ -11,7 +11,7 @@ module.exports = {
         screen_name: item.screen_name
       }, {upsert: true}, function (err) {
         if (err) {
-          reject();
+          reject(err);
         } else {
           resolve();
         }

@@ -30,6 +30,6 @@
     "require-directory": "~2.1.1"
   },
   "engines": {
-    "node": "5.4.x"
+    "node": ">=5.4.0"
   }
 }

@@ -1,3 +1,4 @@
+/* global process */
 'use strict';
 
 var Config = {
@@ -8,8 +9,14 @@ var Config = {
 	TWITTER_CONSUMER_SECRET: process.env.TWITTER_CONSUMER_SECRET,
 	TWITTER_API_CALLBACK: process.env.TWITTER_API_CALLBACK || 'http://127.0.0.1:5000/auth/twitter/callback',
 	ADMIN_USERNAME: process.env.ADMIN_USERNAME,
-	ADMIN_PASSWORD: process.env.ADMIN_PASSWORD
+	ADMIN_PASSWORD: process.env.ADMIN_PASSWORD,
+    LOG_ENABLED: process.env.LOG_ENABLED || 'true',
+    PIWIK_TRACKED_DOMAIN: process.env.PIWIK_TRACKED_DOMAIN || '127.0.0.1',
+    PIWIK_URL: process.env.PIWIK_URL || '127.0.0.1',
+    PIWIK_SITEID: process.env.PIWIK_SITEID || 1
 }
+
+Config.LOG_ENABLED = Config.LOG_ENABLED === 'true';
 
 if(!Config.ADMIN_USERNAME || !Config.ADMIN_PASSWORD){
 	console.log('ADMIN_USERNAME and ADMIN_PASSWORD are required');
