@@ -4,7 +4,8 @@
   "description": "Unfollowers app",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "test": "echo \"No test specified\" && exit 0"
   },
   "keywords": [],
   "author": "Sirikon",
