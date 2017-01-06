@@ -1,6 +1,9 @@
+machine:
+  services:
+    - docker
 general:
   artifacts:
-    - "artifact.zip"
+    - "sirikonme.tar"
 deployment:
   master:
     branch: master
