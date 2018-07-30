@@ -34,26 +34,6 @@ var LoginWithTwitterLoadingBehaviour = function() {
 	}
 }
 
-function preloadImage(image) {
-    var imageUrl = image.getAttribute('preload-src');
-    var imageObject = document.createElement('img');
-    imageObject.onerror = function(){
-        image.setAttribute('src', '/static/img/image_load_error.png');
-    }
-    imageObject.onload = function(){
-        image.setAttribute('src', imageUrl);
-    }
-    imageObject.src = imageUrl;
-}
-
-var PreloadImagesBehaviour = function() {
-    var images = $$('img[preload-src]');
-    setTimeout(function(){
-        images.forEach(preloadImage);
-    }, 1);
-}
-
 GenReportLoadingBehaviour();
 OpenProfileWidgetBehaviour();
 LoginWithTwitterLoadingBehaviour();
-PreloadImagesBehaviour();
