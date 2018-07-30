@@ -1,6 +1,6 @@
 {
   "name": "unfollowers",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Unfollowers app",
   "main": "app.js",
   "scripts": {
@@ -13,9 +13,9 @@
   "author": "Sirikon",
   "license": "MIT",
   "devDependencies": {
-    "gulp": "~3.9.0",
-    "gulp-sass": "~2.3.2",
-    "gulp-sourcemaps": "~2.2.0"
+    "gulp": "~3.9.1",
+    "gulp-sass": "~4.0.1",
+    "gulp-sourcemaps": "~2.6.4"
   },
   "dependencies": {
     "body-parser": "~1.18.3",

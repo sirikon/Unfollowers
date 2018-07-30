@@ -23,8 +23,9 @@ var TwitterCallback = function(req, res){
 		}, handleError);
 	}, handleError);
 
-	var handleError = () => {
+	var handleError = (err) => {
 		res.send('There was an error with Twitter connectivity... try again later');
+		console.log(err);
 	}
 
 }

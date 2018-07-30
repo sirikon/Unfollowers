@@ -8,8 +8,9 @@ var TwitterLogin = function(req, res){
 		req.session.token = result.requestToken;
 		req.session.tokenSecret = result.requestTokenSecret;
 		res.redirect('https://twitter.com/oauth/authenticate?oauth_token=' + result.requestToken);
-	}, (error) => {
+	}, (err) => {
 		res.send('There was an error with Twitter connectivity... try again later');
+		console.log(err);
 	});
 
 }
